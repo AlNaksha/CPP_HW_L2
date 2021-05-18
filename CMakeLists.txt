@@ -1,0 +1,3 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.20.2)
+PROJECT(L2)
+add_executable(L2 src/HW_L2.cpp)

@@ -25,10 +25,5 @@ int main(){
 		signed char ver;
 		signed char dia;
 	};
-	//char n; //Размерность поля
-	//printf("Input field size = ");
-	//scanf("%i", n);
-	//tableT field[n][n] = {};
-	
 	
 }

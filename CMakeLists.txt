@@ -1,3 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.20.2)
 PROJECT(L2)
-add_executable(L2 src/HW_L2.cpp)
+# add_executable(L2 src/HW_L2.cpp)
+# add_executable(L3 src/HW_L3.cpp)
+add_executable(L4 src/HW_L4.cpp)

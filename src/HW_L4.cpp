@@ -52,7 +52,7 @@ int main(){
 	//cout << n << endl;
 	if(n2 > 0){
 		int j2 = 0; // incriment of iteration
-		long long i2;
+		long long i2 = 0;
 		bool t; // true - simple, false - natural
 		if (n2 > 3){
 			
@@ -125,26 +125,22 @@ int main(){
 	// cout << "    Enter  = ";
 	// cin >> n4;
 	
-	int arradr[n4][n4];
+	int arradr[n4][n4] = {0};
 		
 	cout << "  ";
 	for(int i4 = 0; i4 < n4; i4++){
 		
-		for(int j4 = 0; j4 < n4; j4++){
-		
-			if ((i4 == j4)||(i4 + j4 == n4-1)){
-				
-				arradr[i4][j4] = 1;
-				cout << "1";
-				
-			} else{
-				arradr[i4][j4] = 0;
-				cout << "0";
-			}
+		if ((i4 == j4)||(i4 + j4 == n4-1)){
 			
-			cout << " ";
+			arradr[i4][j4] = 1;
+			cout << "1";
 			
+		} else{
+			arradr[i4][j4] = 0;
+			cout << "0";
 		}
+		
+		cout << " ";
 		cout << endl << "  ";
 			
 	}
@@ -164,9 +160,9 @@ int main(){
 	cout << "    Enter year = ";	
 	cin >> n5;
 	
-	if (n5 % 100 == 0) n5 = n5 / 100;
+	//int nn = (n5 % 100 == 0) ? n5 / 100 : n5;
 	
-	if (n5 % 4 == 0){
+	if (((n5 % 100 == 0) ? n5 / 100 : n5) % 4 == 0){
 		cout << " Leap rear " << endl;		
 	} else {
 		cout << " Not Leap year " << endl;

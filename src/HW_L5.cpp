@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdarg.h>
 
 using namespace std;
 
@@ -33,12 +34,21 @@ namespace funkL5 { // funkL5::
 		
 		return 0;
 	}
-	int N1(int size, ...){
-		
-		
+	////////////////////////////////////////
+	
+	void N1_2(int size, ...){
+		short * arg_i;
+		va_list ap;
+		va_start(ap, size);
+		for (int j = 0; j < size; j++) {
+			arg_i = va_arg(ap, short*);
+			printf(" %d ", *arg_i);
+			cout << *(arg_i+1) << endl;
+		}
+		va_end(ap);
 	}
-
 	///////////////////////////////////////
+	
 	int N2(short arr2[], int n){
 		//cout << n << endl;
 		for (short i = 0; i < n; i++){
@@ -50,8 +60,8 @@ namespace funkL5 { // funkL5::
 		
 		return 0;
 	}
-
 	////////////////////////////////////////
+	
 	bool N3(short arr3[], int l){
 		bool flg;
 		
@@ -87,8 +97,8 @@ namespace funkL5 { // funkL5::
 		
 		return 0;
 	}
-
 	////////////////////////////////////////
+	
 	int N4(short arr4[], int l, int n){
 			
 		if (!n) return 0;
@@ -142,7 +152,8 @@ int main(){
 	
 	short arr1[10] = {0,0,0,1,0,1,0,0,1,1};
 	int l1 = sizeof(arr1)/sizeof(short);
-	funkL5::N1(arr1, l1);
+	// funkL5::N1(arr1, l1);
+	funkL5::N1_2(l1, arr1);
 
 ////////////////////////////////////////
 // #2
@@ -184,9 +195,9 @@ int main(){
 // сместить все элементы массива на n позиций. 
 ////////////////////////////////////////
 	cout << endl << "#4" << endl;
-	cout << "    Enter offset = ";
-	int n;
-	cin >> n;
+	//cout << "    Enter offset = ";
+	int n = 2;
+	//cin >> n;
 	
 	funkL5::N4(arr3, l3, n);
 	printArr(arr3, l3);
@@ -196,6 +207,12 @@ int main(){
 // #5
 // ** Написать функцию из первого задания так, чтобы она работала с аргументом переменной длины.
 ////////////////////////////////////////
+
+	// char t;
+	// t = -20;
+	// unsigned char t2;
+	// t2=(unsigned char) t;
+    // printf("The character '%c' has code ыопыко %d (%hhu).\n",t,t,(unsigned)t2);
 
 ////////////////////////////////////////
 // #6
